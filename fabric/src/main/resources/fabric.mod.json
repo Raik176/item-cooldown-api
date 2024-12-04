@@ -15,14 +15,14 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "${group}.${id}.fabric.TemplateModFabric"
+      "${group}.${id}.fabric.ItemCooldownAPIFabric"
     ]
   },
   "mixins": [
     "${id}-common.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.15",
+    "fabricloader": ">=0.16.9",
     "minecraft": "${minecraft}"
   }
 }

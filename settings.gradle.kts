@@ -26,4 +26,4 @@ stonecutter {
     }
 }
 
-rootProject.name = "Template Mod"
+rootProject.name = "Item Cooldown API"
