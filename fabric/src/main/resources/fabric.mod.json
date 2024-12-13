@@ -23,6 +23,7 @@
   ],
   "depends": {
     "fabricloader": ">=0.16.9",
-    "minecraft": "${minecraft}"
+    "minecraft": "${minecraft}",
+    "common_networking": "*"
   }
 }

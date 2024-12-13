@@ -42,11 +42,17 @@ configurations {
     get("developmentFabric").extendsFrom(commonBundle)
 }
 
+repositories {
+    maven("https://jm.gserv.me/repository/maven-public/")
+}
+
 dependencies {
     minecraft("com.mojang:minecraft:$minecraft")
     mappings(loom.officialMojangMappings())
     modImplementation("net.fabricmc:fabric-loader:${mod.dep("fabric_loader")}")
     modImplementation("net.fabricmc.fabric-api:fabric-api:${common.mod.dep("fabric_api")}")
+
+    modImplementation("mysticdrew:common-networking-fabric:${common.mod.dep("common_networking")}")
 
     commonBundle(project(common.path, "namedElements")) { isTransitive = false }
     shadowBundle(project(common.path, "transformProductionFabric")) { isTransitive = false }
@@ -135,6 +141,7 @@ publishMods {
         projectDescription = providers.fileContents(common.layout.projectDirectory.file("../../README.md")).asText.get()
 
         requires("fabric-api")
+        requires("common-network")
     }
     curseforge {
         accessToken = providers.environmentVariable("CF_API_KEY")
@@ -142,6 +149,7 @@ publishMods {
         minecraftVersions.addAll(common.mod.prop("mc_targets").split(" "))
 
         requires("fabric-api")
+        requires("common-network")
     }
     github {
         accessToken = providers.environmentVariable("GITHUB_TOKEN")

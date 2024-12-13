@@ -8,8 +8,8 @@ plugins {
 
 val minecraft = stonecutter.current.version
 
-extra["githubRepo"] = "CHANGE/THIS"
-extra["modrinthId"] = "N/A"
+extra["githubRepo"] = "Raik176/item-cooldown-api"
+extra["modrinthId"] = "OyRzbqOE"
 extra["curseforgeId"] = "N/A"
 
 version = "${mod.version}+$minecraft"
@@ -23,6 +23,10 @@ architectury.common(stonecutter.tree.branches.mapNotNull {
     else it.prop("loom.platform")
 })
 
+repositories {
+    maven("https://jm.gserv.me/repository/maven-public/")
+}
+
 dependencies {
     minecraft("com.mojang:minecraft:$minecraft")
     mappings(loom.officialMojangMappings())
@@ -31,6 +35,7 @@ dependencies {
         annotationProcessor(it)
         implementation(it)
     }
+    modImplementation("mysticdrew:common-networking-common:${mod.dep("common_networking")}")
 }
 
 loom {

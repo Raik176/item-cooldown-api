@@ -13,3 +13,10 @@ logoBlur = false
 
 [[mixins]]
 config = "${id}-common.mixins.json"
+
+[[dependencies.${id}]]
+modId="common-network"
+mandatory=true
+versionRange=""
+ordering="AFTER"
+side="BOTH"

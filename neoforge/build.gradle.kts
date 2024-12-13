@@ -44,6 +44,7 @@ configurations {
 
 repositories {
     maven("https://maven.neoforged.net/releases/")
+    maven("https://jm.gserv.me/repository/maven-public/")
 }
 
 dependencies {
@@ -54,6 +55,8 @@ dependencies {
         implementation(it)
         include(it)
     }
+
+    modImplementation("mysticdrew:common-networking-neoforge:${common.mod.dep("common_networking")}")
 
     commonBundle(project(common.path, "namedElements")) { isTransitive = false }
     shadowBundle(project(common.path, "transformProductionNeoForge")) { isTransitive = false }
@@ -140,11 +143,15 @@ publishMods {
         projectId = common.extra["modrinthId"].toString()
         minecraftVersions.addAll(common.mod.prop("mc_targets").split(" "))
         projectDescription = providers.fileContents(common.layout.projectDirectory.file("../../README.md")).asText.get()
+
+        requires("common-network")
     }
     curseforge {
         accessToken = providers.environmentVariable("CF_API_KEY")
         projectId = common.extra["curseforgeId"].toString()
         minecraftVersions.addAll(common.mod.prop("mc_targets").split(" "))
+
+        requires("common-network")
     }
     github {
         accessToken = providers.environmentVariable("GITHUB_TOKEN")
