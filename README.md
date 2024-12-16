@@ -2,7 +2,7 @@
     <a href="https://modrinth.com/project/icapi">
         <img alt="modrinth" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy-minimal/available/modrinth_vector.svg">
     </a>
-    <a href="https://github.com/Raik176/icapi">
+    <a href="https://github.com/Raik176/item-cooldown-api">
         <img alt="github" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy-minimal/available/github_vector.svg">
     </a>
     <a href="https://discord.gg/FpEReTJbSA">
